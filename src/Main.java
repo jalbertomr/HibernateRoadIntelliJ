@@ -1,4 +1,5 @@
 import org.bext.dto.Persona;
+import org.bext.dto.Vehiculo;
 import org.hibernate.HibernateException;
 import org.hibernate.Metamodel;
 import org.hibernate.query.Query;
@@ -52,9 +53,16 @@ public class Main {
         Persona persona2 = new Persona();
         persona2.setName("Segunda Persona");
 
+        Vehiculo vehiculo = new Vehiculo();
+        vehiculo.setNombre("vehiculo one");
+        Vehiculo vehiculo2 = new Vehiculo();
+        vehiculo2.setNombre("vehiculo dos");
+
         session.beginTransaction();
         session.save(persona);
         session.save(persona2);
+        session.save(vehiculo);
+        session.save(vehiculo2);
         session.getTransaction().commit();
 
         session.close();

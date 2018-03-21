@@ -1,11 +1,14 @@
 package org.bext.dto;
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Vehiculo {
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nombre;
 
