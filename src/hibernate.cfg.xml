@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.gjt.mm.mysql.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/wsp?zeroDateTimeBehavior=convertToNull</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">betopass</property>
+        <property name="hibernate.default_schema">wsp</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">10</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup create, update, validate, create-drop, ...-->
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <!-- Names the annotated entity class -->
+        <mapping class="org.bext.dto.Persona"/>
+    </session-factory>
+</hibernate-configuration>
