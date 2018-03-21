@@ -28,5 +28,6 @@
 
         <!-- Names the annotated entity class -->
         <mapping class="org.bext.dto.Persona"/>
+        <mapping class="org.bext.dto.Vehiculo"/>
     </session-factory>
 </hibernate-configuration>
